@@ -261,7 +261,19 @@ const getContentByRole = async (req, res) => {
 
     const role = profile.role.toLowerCase(); 
 
-    res.status(200).json({ redirectTo: `/learn/${role}` });
+    const redirectMap = {
+      student: './collegeS/collegeS.html',
+      freelancer:  './freelancer/freelancer.html' ,
+      'corporate fresher': './corporate.html'
+    };
+
+    const redirectTo = redirectMap[role];
+
+    if (!redirectTo) {
+      return res.status(400).json({ message: 'Invalid role' });
+    }
+
+    res.status(200).json({ redirectTo });
 
   } catch (error) {
     console.error('Error determining role route:', error);

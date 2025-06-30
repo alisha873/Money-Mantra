@@ -229,37 +229,25 @@
       if (error || !data?.user) throw new Error('Not logged in');
 
       const email = data.user.email;
-      const token = localStorage.getItem('sb-access-token');
+      const { data: sessionData } = await supabase.auth.getSession();
+      const token = sessionData.session.access_token;
+
 
       const response = await fetch('http://localhost:3000/api/learn/content', {
-        method: 'GET',
+        method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
-          email: email
-        }
+        },
+        body: JSON.stringify({ email })
       });
 
       if (!response.ok) throw new Error('Failed to get user role');
-      const { role } = await response.json();
-
-      // Redirect based on role
-      switch (role.toLowerCase()) {
-        case 'student':
-          window.location.href = './collegeS/collegeS.html';
-          break;
-        case 'freelancer':
-          window.location.href = './freelancer.html';
-          break;
-        case 'corporate fresher':
-          window.location.href = './corporate.html';
-          break;
-        default:
-          alert('Unknown role. Please complete your profile.');
-      }
+      const { redirectTo } = await response.json();
+      window.location.href = redirectTo;
     } catch (err) {
-      console.error('Role-based redirection failed:', err);
-      alert('Something went wrong. Please try again.');
+        console.error('Role-based redirection failed:', err);
+        alert('Something went wrong. Please try again.');
     }
   });
 </script>

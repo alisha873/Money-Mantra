@@ -224,7 +224,7 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
 
     // Header transparency effect
-    const header = document.querySelector('.header');
+    const header = document.querySelector('header');
     if (scrolled > 100) {
         header.style.background = 'rgba(0, 0, 0, 0.95)';
     } else {

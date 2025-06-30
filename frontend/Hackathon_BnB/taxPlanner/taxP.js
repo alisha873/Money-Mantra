@@ -6,6 +6,12 @@ let token = '';
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('gpt-content');
 
+  const { data: { session }, error } = await supabase.auth.getSession();
+  if (error || !session) {
+    window.location.href = '/index1.html'; // or your login page
+    return;
+  }
+
   try {
     // ✅ Get session (this auto-refreshes the token if expired)
     const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
