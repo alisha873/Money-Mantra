@@ -1,0 +1,56 @@
+/* Mouse Trail Effect */
+.mouse-trail {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 9999;
+    transition: all 0.1s ease;
+}
+
+.floating-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+    25% { transform: translateY(-20px) rotate(90deg); opacity: 0.6; }
+    50% { transform: translateY(-40px) rotate(180deg); opacity: 1; }
+    75% { transform: translateY(-20px) rotate(270deg); opacity: 0.6; }
+}
+
+.geometric-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0.1;
+}
+
+.geo-shape {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: rotateShape 20s linear infinite;
+}
+
+@keyframes rotateShape {
+    from { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.1); }
+    to { transform: rotate(360deg) scale(1); }
+}

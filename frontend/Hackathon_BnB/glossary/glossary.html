@@ -4,24 +4,31 @@
   <meta charset="UTF-8">
   <title>MoneyMantra Glossary</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Font Awesome for icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="glossary.css">
+  <link rel="stylesheet" href="../learnFinance.css">
+  <link rel="stylesheet" href="../mouseTrail.css">
 </head>
 <body>
    <canvas id="dynamicCanvas"></canvas>
-  <div class="container">
-    <h1>
+   
+   <h1>
       <span class="brand-name">Glossary</span> 
     </h1>
-    <div class="glossary-grid">
+    
+  <div class="container">
+     <div class="floating-particles" id="particles"></div>
+    <div class="geometric-bg" id="geometric"></div>
+    <div class="floating-elements" id="floatingElements"></div>
+    <div>
 
       <!-- Health Insurance -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-notes-medical"></i></span>
+        <span class="term-title">Health Insurance</span>
+      </div>
+
       <div class="glossary-card">
-        <div class="icon-title-row">
-          <span class="glossary-icon"><i class="fas fa-notes-medical"></i></span>
-          <span class="term-title">Health Insurance</span>
-        </div>
         <div class="term-desc">
           A contract with an insurer that covers medical expenses in return for regular premiums. It helps pay for hospital stays, surgeries, medicines, and more, reducing your financial burden during illness or injury. Plans can be individual, family, or group, and may cover pre/post-hospitalization, critical illness, and other benefits.<br>
           <span style="color:#10b981;font-size:0.97rem;">Tip: Buy early for lower premiums and wider coverage.</span>
@@ -29,11 +36,12 @@
       </div>
 
       <!-- Education Loan -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-graduation-cap"></i></span>
+        <span class="term-title">Education Loan</span>
+      </div>
+
       <div class="glossary-card">
-        <div class="icon-title-row">
-          <span class="glossary-icon"><i class="fas fa-graduation-cap"></i></span>
-          <span class="term-title">Education Loan</span>
-        </div>
         <div class="term-desc">
           A loan taken to finance higher education expenses like tuition, books, and living costs. Repayment usually starts after course completion, often with a grace period. Loans can be from banks (public/private) or government schemes. Interest rates and terms vary; some offer tax benefits under Section 80E (India).<br>
           <span style="color:#10b981;font-size:0.97rem;">Tip: Start planning repayment early to reduce interest burden.</span>
@@ -41,11 +49,12 @@
       </div>
 
       <!-- PPF -->
-      <div class="glossary-card">
-        <div class="icon-title-row">
+      <div class="icon-title-row">
           <span class="glossary-icon"><i class="fas fa-piggy-bank"></i></span>
           <span class="term-title">PPF (Public Provident Fund)</span>
-        </div>
+      </div>
+
+      <div class="glossary-card">
         <div class="term-desc">
           A government-backed, long-term savings scheme in India with a 15-year lock-in. Offers safe, tax-free returns and tax deduction benefits under Section 80C. Ideal for building a retirement corpus, with options for partial withdrawal and loan against balance after a few years.<br>
           <span style="color:#10b981;font-size:0.97rem;">Tip: Start early to maximize compounding benefits.</span>
@@ -53,11 +62,12 @@
       </div>
 
       <!-- NPS -->
-      <div class="glossary-card">
-        <div class="icon-title-row">
+      <div class="icon-title-row">
           <span class="glossary-icon"><i class="fas fa-chart-line"></i></span>
           <span class="term-title">NPS (National Pension System)</span>
-        </div>
+      </div>
+
+      <div class="glossary-card">
         <div class="term-desc">
           A voluntary, long-term retirement savings scheme regulated by the Indian government. Contributions are invested in equity, government bonds, and other assets for market-linked returns. Offers tax benefits, flexibility, and a mix of lump sum and pension payout at retirement.<br>
           <span style="color:#10b981;font-size:0.97rem;">Tip: Useful for disciplined retirement planning with tax perks.</span>
@@ -65,11 +75,12 @@
       </div>
 
       <!-- Life Insurance -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-heart"></i></span>
+        <span class="term-title">Life Insurance</span>
+      </div>
+
       <div class="glossary-card">
-        <div class="icon-title-row">
-          <span class="glossary-icon"><i class="fas fa-heart"></i></span>
-          <span class="term-title">Life Insurance</span>
-        </div>
         <div class="term-desc">
           A contract where an insurer pays a sum to your nominee in case of your death, in exchange for regular premiums. Protects your family’s financial future by covering loss of income, debts, or major expenses. Includes term insurance, endowment, and ULIPs.<br>
           <span style="color:#10b981;font-size:0.97rem;">Tip: Essential for anyone with dependents or loans.</span>
@@ -77,11 +88,12 @@
       </div>
 
       <!-- FD -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-coins"></i></span>
+        <span class="term-title">FD (Fixed Deposit)</span>
+      </div>
+
       <div class="glossary-card">
-        <div class="icon-title-row">
-          <span class="glossary-icon"><i class="fas fa-coins"></i></span>
-          <span class="term-title">FD (Fixed Deposit)</span>
-        </div>
         <div class="term-desc">
           A safe investment where you deposit a lump sum in a bank for a fixed period at a guaranteed interest rate. At maturity, you receive the principal plus interest. FDs offer flexible tenures, loan facility against deposit, and are ideal for conservative savers.<br>
           <span style="color:#10b981;font-size:0.97rem;">Tip: Use for short- to medium-term goals and emergency funds.</span>
@@ -90,6 +102,8 @@
 
     </div>
   </div>
-  <script src="glossary.js"></script>
+  <script src="../dynamicBg.js"></script>
+  <script src="../mouseTrail.js"></script>
+  <!-- <script src="glossary.js"></script> -->
 </body>
 </html>

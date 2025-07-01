@@ -3,14 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #1e1b4b 0%, #1e40af 50%, #0f172a 100%);
-    min-height: 100vh;
-    padding: 40px 20px;
-    color: #f1f5f9;
+    padding: 27px;
+    font-family: 'Verdana';
+    background: #000;
+    overflow-x: hidden;
+    position: relative;
+    color: white;
 }
+/* Ultra Dynamic Background Canvas */
+#dynamicCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 20% 50%, rgba(30, 64, 175, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+}  
+
 
 .container {
     max-width: 1000px;
@@ -48,7 +61,7 @@ body {
 }
 
 .form-container {
-    background: rgba(30, 64, 175, 0.1);
+    background: #0d277c;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(16, 185, 129, 0.2);
     border-radius: 20px;

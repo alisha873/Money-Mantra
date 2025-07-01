@@ -3,53 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in Page</title>
-    <link rel="stylesheet" href="sign-up.css">
+    <title>Sign up Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./sign-up.css">
 </head>
 <body>
   
-    <!-- Dynamic Canvas Background -->
-    <canvas id="dynamicCanvas"></canvas>
-  
-    <section class="hero">
-      <h2 class="brand-name">Create your account</h2>
-  <div class="login-box">
-    
-    <!-- Login Form -->
-    <form id="register-form">
-      
+  <canvas id="dynamicCanvas"></canvas>
+
+  <section class="hero">
+
+    <h2 class="brand-name">Create your account</h2>
+
+    <div class="login-box">
+      <!-- Register Form -->
+      <form id="register-form" action="../login/login.html">
+        
+          <div class="input-box">
+          <span class="icon"><ion-icon name="person"></ion-icon></span>
+          <input type="text" id="reg-name" required>
+          <label>Full Name</label>
+        </div>
+
         <div class="input-box">
-        <span class="icon"><ion-icon name="person"></ion-icon></span>
-        <input type="text" id="reg-name" required>
-        <label>Full Name</label>
-      </div>
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" id="reg-email" required>
+          <label>Email</label>
+        </div>
 
-      <div class="input-box">
-        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-        <input type="email" id="reg-email" required>
-        <label>Email</label>
-      </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" id="reg-password" required>
+          <label>Password</label>
+        </div>
 
-      <div class="input-box">
-        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-        <input type="password" id="reg-password" required>
-        <label>Password</label>
-      </div>
-
-      <button type="submit" id="register-button">Submit</button>
-      <div id="register-message"></div>
-      <div class="login-link">
-                Already have an account? <a href="../login/login.html">Log in</a>
-            </div>
-    </form>
-    
+        <button type="submit" id="register-button">Submit</button>
+        <div id="register-message"></div>
+        <div class="login-link">
+            Already have an account? <a href="../login/login.html">Log in</a>
+        </div>
+      </form>
     </div>
-</section>
+  </section>
 
-  </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../dynamicBg.js"></script>
+  <script type="module" src="./sign-up.js"></script>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="sign-up.js"></script>
 </body>
 </html>

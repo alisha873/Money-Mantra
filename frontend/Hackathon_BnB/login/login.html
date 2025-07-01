@@ -4,71 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in Page</title>
-    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./login.css">
 </head>
 <body>
   
-    <!-- Dynamic Canvas Background -->
-    <canvas id="dynamicCanvas"></canvas>
-  
-    <section class="hero">
-      <h2 class="brand-name">Login</h2>
-  <div class="login-box">
-    
-    <!-- Login Form -->
-    <form id="login-form" action="../mainForm/form.html">
+  <canvas id="dynamicCanvas"></canvas>
+
+  <section class="hero">
+    <div class="floating-particles" id="particles"></div>
+    <div class="geometric-bg" id="geometric"></div>
+    <div class="floating-elements" id="floatingElements"></div>
+    <h2 class="brand-name">Login</h2>
+    <div class="login-box">
       
-      <div class="input-box">
-        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-        <input type="email" id="email" required>
-        <label>Email</label>
-      </div>
-      <div class="input-box">
-        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-        <input type="password" id="password" required>
-        <label>Password</label>
-      </div>
-      <div class="remember-forgot">
-        <label><input type="checkbox" id="rememberMe">Remember me</label>
-        <a href="#">Forgot Password?</a>
-      </div>
-      <button type="submit" id="login-button">Login</button>
-      <div class="register-link">
-        <p>Don't have an account? <a href="../signUp/sign-up.html" id="show-register" class="brand-name">Register</a></p>
-      </div>
-      <div id="login-message"></div>
-    </form>
+      <form id="login-form" action="../mainForm/form.html">
 
-    <!-- Register Form (hidden by default) -->
-    <form id="register-form" style="display:none;">
-      <h2>Register</h2>
-      <div class="input-box">
-        <span class="icon"><ion-icon name="person"></ion-icon></span>
-        <input type="text" id="reg-name" required>
-        <label>Name</label>
-      </div>
-      <div class="input-box">
-        <span class="icon"><ion-icon name="mail"></ion-icon></span>
-        <input type="email" id="reg-email" required>
-        <label>Email</label>
-      </div>
-      <div class="input-box">
-        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-        <input type="password" id="reg-password" required>
-        <label>Password</label>
-      </div>
-      <button type="submit" id="register-button">Register</button>
-      <div class="register-link">
-        <p>Already have an account? <a href="#" id="show-login">Login</a></p>
-      </div>
-      <div id="register-message"></div>
-    </form>
-  </div>
-</section>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" id="email" required>
+          <label>Email</label>
+        </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script type="module" src="login.js"></script>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" id="password" required>
+          <label>Password</label>
+        </div>
 
+        <div class="remember-forgot">
+          <label><input type="checkbox" id="rememberMe">Remember me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit" id="login-button">Login</button>
+
+        <div class="register-link">
+          <p>Don't have an account? <a href="../signUp/sign-up.html" id="show-register" class="brand-name">Register</a></p>
+        </div>
+
+        <div id="login-message"></div>
+      </form>
+
+      <!-- Register Form (hidden by default) -->
+      <form id="register-form" style="display:none;">
+        <h2>Register</h2>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person"></ion-icon></span>
+          <input type="text" id="reg-name" required>
+          <label>Name</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" id="reg-email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" id="reg-password" required>
+          <label>Password</label>
+        </div>
+        <button type="submit" id="register-button">Register</button>
+        <div class="register-link">
+          <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+        <div id="register-message"></div>
+      </form>
+
+    </div>
+
+  </section>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="login.js"></script>
+  
 </body>
 </html>

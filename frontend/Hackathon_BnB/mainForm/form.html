@@ -4,100 +4,124 @@
   <meta charset="UTF-8">
   <title>MoneyMantra User Details Form</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="form.css">
+  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./form.css">
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <h1>Fill <span class="brand-name">it</span> up</h1>
-    <p>
-      Help us with the information for personalized tax planner and finance education!
-    </p>
-    <br>
-    <p>Team <span class="brand-name">MoneyMantra</span></p>
+  
+  <canvas id="dynamicCanvas"></canvas>
+
+  <div class="container">
+    <div class="header">
+      <h1>Fill <span class="brand-name">it</span> up</h1>
+      <p>
+        Help us with the information for personalized tax planner and finance education!
+      </p>
+      <br>
+      <p>Team <span class="brand-name">MoneyMantra</span></p>
+    </div>
+
+    <div class="form-container">
+      <form id="userDetailsForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Full Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age <span class="required">*</span></label>
+            <input type="number" id="age" name="age" min="18" max="100" placeholder="Enter your age" required>
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role <span class="required">*</span></label>
+            <select id="role" name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="student">Student</option>
+              <option value="freelancer">Freelancer</option>
+              <option value="corporate_fresher">Corporate Fresher</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="income">Annual Income (₹) <span class="required">*</span></label>
+            <input type="number" id="income" name="income" min="0" placeholder="Enter your annual income" required>
+          </div>
+
+          <div class="form-group">
+            <label for="hasHealthInsurance">Do you have Health Insurance?</label>
+            <select id="hasHealthInsurance" name="hasHealthInsurance" required>
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hasEducationLoan">Do you have an Education Loan?</label>
+            <select id="hasEducationLoan" name="hasEducationLoan" required>
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hasPPF">Do you have a PPF account?</label>
+            <select id="hasPPF" name="hasPPF" required>
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hasNPS">Do you have an NPS account?</label>
+            <select id="hasNPS" name="hasNPS" required>
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hasLifeInsurance">Do you have Life Insurance?</label>
+            <select id="hasLifeInsurance" name="hasLifeInsurance" required>
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="hasFD">Do you have a Fixed Deposit (FD)?</label>
+            <select id="hasFD" name="hasFD" required>
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+
+        <div class="success-message" id="successMessage">
+          Thank you for your submission! We'll get back to you soon.
+        </div>
+      </form>
+    </div>
   </div>
 
-  <div class="form-container">
-    <form id="userDetailsForm">
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="email">Email Address <span class="required">*</span></label>
-          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-        </div>
-        <div class="form-group">
-          <label for="name">Full Name <span class="required">*</span></label>
-          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-        </div>
-        <div class="form-group">
-          <label for="age">Age <span class="required">*</span></label>
-          <input type="number" id="age" name="age" min="18" max="100" placeholder="Enter your age" required>
-        </div>
-        <div class="form-group">
-          <label for="role">Role <span class="required">*</span></label>
-          <input type="text" id="role" name="role" placeholder="Your current role or job title" required>
-        </div>
-        <div class="form-group">
-          <label for="income">Annual Income (₹) <span class="required">*</span></label>
-          <input type="number" id="income" name="income" min="0" placeholder="Enter your annual income" required>
-        </div>
-        <div class="form-group">
-          <label for="hasHealthInsurance">Do you have Health Insurance?</label>
-          <select id="hasHealthInsurance" name="hasHealthInsurance" required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="hasEducationLoan">Do you have an Education Loan?</label>
-          <select id="hasEducationLoan" name="hasEducationLoan" required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="hasPPF">Do you have a PPF account?</label>
-          <select id="hasPPF" name="hasPPF" required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="hasNPS">Do you have an NPS account?</label>
-          <select id="hasNPS" name="hasNPS" required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="hasLifeInsurance">Do you have Life Insurance?</label>
-          <select id="hasLifeInsurance" name="hasLifeInsurance" required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="hasFD">Do you have a Fixed Deposit (FD)?</label>
-          <select id="hasFD" name="hasFD" required>
-            <option value="">Select</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-      </div>
-      <button type="submit" class="submit-btn">Submit</button>
-      <div class="success-message" id="successMessage">
-        Thank you for your submission! We'll get back to you soon.
-      </div>
-    </form>
-  </div>
-</div>
-<script type="module" src="../auth.js"></script>
-<script type="module" src="form.js"></script>
+  <script type="module" src="../auth.js"></script>
+  <script type="module" src="form.js"></script>
+  <script src="../dynamicBg.js"></script>
 
 </body>
 </html>

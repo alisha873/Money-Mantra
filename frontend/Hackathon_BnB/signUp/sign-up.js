@@ -13,14 +13,10 @@ window.addEventListener('resize', resizeCanvas);
 // Button functionality
 function openTaxEstimator() {
     alert('AI Tax Estimator feature coming soon! This will redirect to the tax calculation tool.');
-    // You can replace this with actual navigation:
-    // window.location.href = './tax-estimator/index.html';
 }
 
 function openFinanceEducation() {
     alert('Learn Finance feature coming soon! This will redirect to financial education courses.');
-    // You can replace this with actual navigation:
-    // window.location.href = './collegeS/collegeS.html';
 }
 
 // Particle System
@@ -118,29 +114,29 @@ animate();
 import { supabase } from '../supabaseClient.js';
 
 document.getElementById('register-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const name = document.getElementById('reg-name').value;
-  const email = document.getElementById('reg-email').value;
-  const password = document.getElementById('reg-password').value;
+    const name = document.getElementById('reg-name').value;
+    const email = document.getElementById('reg-email').value;
+    const password = document.getElementById('reg-password').value;
 
-  const { data, error } = await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      emailRedirectTo: 'http://127.0.0.1:5500/frontend/Hackathon_BnB/login/login.html', //replace with actual url when deploying
-      data: {
-        full_name: name,
-      },
-    },
-  });
+    const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+            emailRedirectTo: 'http://127.0.0.1:5500/frontend/Hackathon_BnB/login/login.html', 
+            data: {
+                full_name: name,
+            },
+        },
+    });
 
-  console.log({ data, error });
+    console.log({ data, error });
 
-  if (error) {
-    document.getElementById('register-message').textContent = error.message;
-  } else {
-    document.getElementById('register-message').textContent =
-      'Signup successful! Please check your email for confirmation.';
-}
+    if (error) {
+        document.getElementById('register-message').textContent = error.message;
+    } else {
+        document.getElementById('register-message').textContent =
+        'Signup successful! Please check your email for confirmation.';
+    }
 });

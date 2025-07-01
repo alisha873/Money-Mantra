@@ -5,280 +5,277 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money Mantra - Your Financial Wisdom Partner</title>
     <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<header>
-    <canvas id="dynamicCanvas"></canvas>
+    <header>
+        <canvas id="dynamicCanvas"></canvas>
 
-    <nav class="nav">
-      <a href="./login/login.html" class="nav-btn login-btn">Login</a>
-      <a href="./signUp/sign-up.html" class="nav-btn signup-btn">Sign Up</a>
-    </nav>
+        <nav class="nav">
+        <a href="./login/login.html" class="nav-btn login-btn">Login</a>
+        <a href="./signUp/sign-up.html" class="nav-btn signup-btn">Sign Up</a>
+        </nav>
 
-</header>
+    </header>
 
-<!-- Hero Section -->
-<section class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
 
-    <div class="floating-particles" id="particles"></div>
-    <div class="geometric-bg" id="geometric"></div>
-    <div class="floating-elements" id="floatingElements"></div>
+        <div class="floating-particles" id="particles"></div>
+        <div class="geometric-bg" id="geometric"></div>
+        <div class="floating-elements" id="floatingElements"></div>
 
-    <div class="cards-container">
+        <div class="cards-container">
 
-        <div class="card card1">
-            <div class="card-content">
-                <div class="card-number">1234 5123 4000 0000</div>
-                    <div class="card-info">
-                        <div class="card-name">L. Taylor</div>
-                        <div class="card-date">12/28</div>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="card card2">
+            <div class="card card1">
                 <div class="card-content">
-                    <div class="card-number">1234 5123 1000 0000</div>
+                    <div class="card-number">1234 5123 4000 0000</div>
                         <div class="card-info">
-                            <div class="card-name">S. Patel</div>
-                            <div class="card-date">05/27</div>
+                            <div class="card-name">L. Taylor</div>
+                            <div class="card-date">12/28</div>
                         </div>
                     </div>
                 </div>
-
-            <div class="card card3">
-                <div class="card-content">
-                    <div class="card-number">1234 5123 9000 0000</div>
-                        <div class="card-info">
-                            <div class="card-name">A. Kim</div>
-                            <div class="card-date">09/26</div>
+            
+                <div class="card card2">
+                    <div class="card-content">
+                        <div class="card-number">1234 5123 1000 0000</div>
+                            <div class="card-info">
+                                <div class="card-name">S. Patel</div>
+                                <div class="card-date">05/27</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-    </div>
+                <div class="card card3">
+                    <div class="card-content">
+                        <div class="card-number">1234 5123 9000 0000</div>
+                            <div class="card-info">
+                                <div class="card-name">A. Kim</div>
+                                <div class="card-date">09/26</div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="logo-section">
-        <h1 class="logo">Money Mantra</h1>
-        <p class="tagline">Your <strong>Financial Wisdom</strong> Partner<br>, Empowering Smart Money Decisions</p>
-    </div>
-
-    <div class="cta-buttons">
-        <!-- <button onclick="openTaxEstimator()" class="cta-btn primary-btn" >Tax Estimator</button>
-        <button onclick="openFinanceEducation()" class="cta-btn secondary-btn">Finance Education</button> -->
-        <a href="./taxPlanner/taxP.html" class="cta-btn primary-btn" id="ai-tax-summarizer-btn">AI Tax Estimator</a>
-        <a class="cta-btn secondary-btn" id="learn-finance-btn">Learn Finance</a>
-    </div>
-</section>
-
-<section class="content-section">
-
-    <div class="container" id="features">
-        <h2 class="section-title animate-on-scroll">Why Choose Money Mantra</h2>
-        <p class="section-subtitle animate-on-scroll">Revolutionizing personal finance with AI-driven tax planning and tailored financial education. </p>
-        <div class="features-grid">
-
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 16 16" fill="none">
-                        <circle cx="8" cy="8" r="8" fill="#1e40af"/>
-                        <path fill="#fff" d="M2 13h12v1H2zm1-2h2v2H3zm2-3h2v5H5zm2-2h2v7H7zm2-3h2v10H9z"/>
-                    </svg>
-                </div>
-
-                <h3 class="feature-title">AI Tax Estimator</h3>
-                <p class="feature-desc">Get accurate tax calculations with our advanced AI engine. Input your financial data and receive personalized tax estimates in seconds.</p>
-            </div>
-            
-            <div class="feature-card animate-on-scroll">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 16 16" fill="none">
-                        <circle cx="8" cy="8" r="8" fill="#1e40af"/>
-                        <path stroke="#fff" stroke-width="1.5" d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-                    </svg>
-                </div>
-
-                <h3 class="feature-title">Financial Education</h3>
-                <p class="feature-desc">Access comprehensive financial literacy courses, expert insights, and practical guides to build lasting wealth.</p>
-            </div>
-            
-            
         </div>
-    </div>
-</section>
 
-<!-- Stats Section -->
-<section class="content-section stats-section">
-    <div class="container">
-        <h2 class="section-title animate-on-scroll">Trusted by Thousands</h2>
-        <p class="section-subtitle animate-on-scroll">Join our growing community of financially empowered individuals</p>
-        
-        <div class="stats-grid">
-            <div class="stat-item animate-on-scroll">
-                <span class="stat-number">50K+</span>
-                <span class="stat-label">Happy Users</span>
-            </div>
-            
-            <div class="stat-item animate-on-scroll">
-                <span class="stat-number">₹10Cr+</span>
-                <span class="stat-label">Tax Savings</span>
-            </div>
-            
-            <div class="stat-item animate-on-scroll">
-                <span class="stat-number">98%</span>
-                <span class="stat-label">Accuracy Rate</span>
-            </div>
-            
-            <div class="stat-item animate-on-scroll">
-                <span class="stat-number">24/7</span>
-                <span class="stat-label">AI Support</span>
-            </div>
+        <div class="logo-section">
+            <h1 class="logo">Money Mantra</h1>
+            <p class="tagline">Your <strong>Financial Wisdom</strong> Partner<br>, Empowering Smart Money Decisions</p>
         </div>
-    </div>
-</section>
 
-<!-- How It Works Section -->
-<section class="content-section">
-    <div class="container">
-        <h2 class="section-title animate-on-scroll">How It Works</h2>
-        <p class="section-subtitle animate-on-scroll">Get started with Money Mantra in three simple steps</p>
-        
-        <div class="timeline-container">
-            <div class="timeline-line"></div>
-        
-            <div class="timeline-steps">
-                <div class="step-item animate-on-scroll">
-                    <div class="step-number-wrapper">
-                        
-                        <div class="step-number">1</div>
-                    </div>
-                    <div class="step-card">
-                        <h3 class="step-title">Sign Up & Connect</h3>
-                        <p class="step-desc">Create your account and securely connect your financial accounts for comprehensive analysis.</p>
-                    </div>
-                </div>
-                
-                <div class="step-item animate-on-scroll">
-                    <div class="step-number-wrapper">
-                        <div class="step-number">2</div>
-                    </div>
-                    <div class="step-card">
-                        <h3 class="step-title">AI Analysis</h3>
-                        <p class="step-desc">Our advanced AI analyzes your financial data to provide personalized insights and recommendations.</p>
-                    </div>
-                </div>
-                
-                <div class="step-item animate-on-scroll">
-                    <div class="step-number-wrapper">
-                        <div class="step-number">3</div>
-                    </div>
-                    <div class="step-card">
-                        <h3 class="step-title">Take Action</h3>
-                        <p class="step-desc">Implement our recommendations and track your progress towards financial freedom.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Final CTA Section -->
-<section class="content-section cta-section-full">
-    <div class="container">
-        <h2 class="cta-title animate-on-scroll">Ready to Transform Your Finances?</h2>
-        <p class="cta-desc animate-on-scroll">Join thousands of users who have already started their journey to financial freedom with Money Mantra.</p>
-        
         <div class="cta-buttons">
-            <a href="./mainForm/form.html" class="cta-btn primary-btn">Start Now</a>
+            <a href="./taxPlanner/taxP.html" class="cta-btn primary-btn" id="ai-tax-summarizer-btn">AI Tax Estimator</a>
+            <a class="cta-btn secondary-btn" id="learn-finance-btn">Learn Finance</a>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-logo" >Money Mantra</div>
-        <p class="footer-text">Empowering financial decisions through AI-powered insights and expert guidance.</p>
-        
-        <div class="footer-links">
-            <a href="#" class="footer-link">About Us</a>
-            <a href="#features" class="footer-link">Features</a>
-            <a href="./glossary.html" class="footer-link">Glossary</a>
-            <a href="#" class="footer-link">Contact Us</a>
-            <a href="./joinTeamForm/index_joinTeam.html" class="footer-link">Join Team</a>
+    <!-- Content setion -->
+    <section class="content-section">
+
+        <div class="container" id="features">
+            <h2 class="section-title animate-on-scroll">Why Choose Money Mantra</h2>
+            <p class="section-subtitle animate-on-scroll">Revolutionizing personal finance with AI-driven tax planning and tailored financial education. </p>
+            <div class="features-grid">
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="8" fill="#1e40af"/>
+                            <path fill="#fff" d="M2 13h12v1H2zm1-2h2v2H3zm2-3h2v5H5zm2-2h2v7H7zm2-3h2v10H9z"/>
+                        </svg>
+                    </div>
+
+                    <h3 class="feature-title">AI Tax Estimator</h3>
+                    <p class="feature-desc">Get accurate tax calculations with our advanced AI engine. Input your financial data and receive personalized tax estimates in seconds.</p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 16 16" fill="none">
+                            <circle cx="8" cy="8" r="8" fill="#1e40af"/>
+                            <path stroke="#fff" stroke-width="1.5" d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                        </svg>
+                    </div>
+
+                    <h3 class="feature-title">Financial Education</h3>
+                    <p class="feature-desc">Access comprehensive financial literacy courses, expert insights, and practical guides to build lasting wealth.</p>
+                </div>      
+            </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Money Mantra. All rights reserved.</p>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="content-section stats-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Trusted by Thousands</h2>
+            <p class="section-subtitle animate-on-scroll">Join our growing community of financially empowered individuals</p>
+            
+            <div class="stats-grid">
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Happy Users</span>
+                </div>
+                
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">₹10Cr+</span>
+                    <span class="stat-label">Tax Savings</span>
+                </div>
+                
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Accuracy Rate</span>
+                </div>
+                
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">AI Support</span>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script type="module" src="supabaseClient.js"></script>
-<script src="script.js"></script>
+    <!-- How It Works Section -->
+    <section class="content-section">
 
-<script type="module">
-  import { supabase } from './supabaseClient.js';
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">How It Works</h2>
+            <p class="section-subtitle animate-on-scroll">Get started with Money Mantra in three simple steps</p>
+            
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+            
+                <div class="timeline-steps">
+                    <div class="step-item animate-on-scroll">
+                        <div class="step-number-wrapper">                          
+                            <div class="step-number">1</div>
+                            <div class="step-card">
+                                <h3 class="step-title">Sign Up & Connect</h3>
+                                <p class="step-desc">Create your account and securely connect your financial accounts for comprehensive analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item animate-on-scroll">
+                        <div class="step-number-wrapper">
+                            <div class="step-number">2</div>
+                            <div class="step-card">
+                                <h3 class="step-title">AI Analysis</h3>
+                                <p class="step-desc">Our advanced AI analyzes your financial data to provide personalized insights and recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item animate-on-scroll">
+                        <div class="step-number-wrapper">
+                            <div class="step-number">3</div>
+                            <div class="step-card">
+                                <h3 class="step-title">Take Action</h3>
+                                <p class="step-desc">Implement our recommendations and track your progress towards financial freedom.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  document.getElementById('learn-finance-btn')?.addEventListener('click', async () => {
-    try {
-      const { data, error } = await supabase.auth.getUser();
-      if (error || !data?.user) throw new Error('Not logged in');
+    <!-- Final CTA Section -->
+    <section class="content-section cta-section-full">
+        <div class="container">
+            <h2 class="cta-title animate-on-scroll">Ready to Transform Your Finances?</h2>
+            <p class="cta-desc animate-on-scroll">Join thousands of users who have already started their journey to financial freedom with Money Mantra.</p>
+            
+            <div class="cta-buttons">
+                <a href="./index.html" class="cta-btn primary-btn">Start Now</a>
+            </div>
+        </div>
+    </section>
 
-      const email = data.user.email;
-      const { data: sessionData } = await supabase.auth.getSession();
-      const token = sessionData.session.access_token;
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo" >Money Mantra</div>
+            <p class="footer-text">Empowering financial decisions through AI-powered insights and expert guidance.</p>
+            
+            <div class="footer-links">
+                <a href="./aboutUs/aboutUs.html" class="footer-link">About Us</a>
+                <a href="#features" class="footer-link">Features</a>
+                <a href="./glossary/glossary.html" class="footer-link">Glossary</a>
+                <a href="./contactUs/contactUs.html" class="footer-link">Contact Us</a>
+                <a href="./joinTeamForm/index_joinTeam.html" class="footer-link">Join Team</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Money Mantra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="supabaseClient.js"></script>
+    <script src="script.js"></script>
+
+    <script type="module">
+        import { supabase } from './supabaseClient.js';
+
+          document.getElementById('learn-finance-btn')?.addEventListener('click', async () => {
+            try {
+              const { data, error } = await supabase.auth.getUser();
+              if (error || !data?.user) throw new Error('Not logged in');
+
+            const email = data.user.email;
+            console.log("Sending email to backend:", email);
+            const { data: sessionData } = await supabase.auth.getSession();
+            const token = sessionData.session.access_token;
 
 
-      const response = await fetch('http://localhost:3000/api/learn/content', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email })
-      });
-
-      if (!response.ok) throw new Error('Failed to get user role');
-      const { redirectTo } = await response.json();
-      window.location.href = redirectTo;
-    } catch (err) {
-        console.error('Role-based redirection failed:', err);
-        alert('Something went wrong. Please try again.');
-    }
-  });
+            const response = await fetch('http://localhost:3000/api/learn/content', {
+              method: 'POST',
+              headers: {
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email })
+            });
+   
+            if (!response.ok) throw new Error('Failed to get user role');
+            const { redirectTo } = await response.json();
+            window.location.href = redirectTo;
+        } catch (err) {
+            console.error('Role-based redirection failed:', err);
+            alert('Something went wrong. Please try again.');
+        }
+    });
 </script>
 
-<!-- Auth Session Logic -->
-  <script type="module">
+    <!-- Auth Session Logic -->
+    <script type="module">
     import { supabase } from './supabaseClient.js';
     import { signOut } from './auth.js';
 
     document.addEventListener('DOMContentLoaded', async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      let user = null;
-      if (session) user = session.user;
-      const loginBtn = document.querySelector('.login-btn');
-      const signupBtn = document.querySelector('.signup-btn');
+        const { data: { session } } = await supabase.auth.getSession();
+        let user = null;
+        if (session) user = session.user;
+        const loginBtn = document.querySelector('.login-btn');
+        const signupBtn = document.querySelector('.signup-btn');
 
-      if (user) {
+        if (user) {
         loginBtn.textContent = 'Logout';
         loginBtn.href = '#';
         loginBtn.addEventListener('click', async (e) => {
-          e.preventDefault();
-          await signOut();
-          window.location.href = './index.html';
+            e.preventDefault();
+            await signOut();
+            window.location.href = './index.html';
         });
         if (signupBtn) signupBtn.style.display = 'none';
-      } else {
+        } else {
         loginBtn.textContent = 'Login';
         loginBtn.href = './login/login.html';
         if (signupBtn) signupBtn.style.display = 'inline-block';
-      }
+        }
     });
-  </script>
+    </script>
 </body>
 </html>

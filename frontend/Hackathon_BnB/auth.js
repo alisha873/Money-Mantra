@@ -1,6 +1,6 @@
 import { supabase } from './supabaseClient.js';
 
-// 🔁 Sync minimal user to backend
+// Sync minimal user to backend
 async function initUserInBackend(user, token) {
   try {
     const res = await fetch('http://localhost:3000/api/user/init', {
@@ -19,10 +19,10 @@ async function initUserInBackend(user, token) {
     if (!res.ok) {
       console.error('Init user failed:', data);
     } else {
-      console.log('🟢 User initialized in backend:', data);
+      console.log('User initialized in backend:', data);
     }
   } catch (err) {
-    console.error('❌ Failed to initialize user in backend:', err);
+    console.error('Failed to initialize user in backend:', err);
   }
 }
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const showRegister = document.getElementById('show-register');
   const showLogin = document.getElementById('show-login');
 
-  // 🔄 Toggle Login/Register
+  //Toggle Login/Register
   showRegister?.addEventListener('click', (e) => {
     e.preventDefault();
     loginForm.style.display = 'none';
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.style.display = 'block';
   });
 
-  // ✅ Login Handler
+  //Login Handler
   loginForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = document.getElementById('email')?.value;
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ✅ Register Handler with Auto-Login + Init Backend
+  //Register Handler with Auto-Login + Init Backend
   registerForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('reg-name')?.value;
@@ -92,14 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Optional: Inform user about email confirmation
+    //Inform user about email confirmation
     if (!signupData.session) {
       messageEl.textContent = 'Signup successful! Please check your email to confirm before logging in.';
       messageEl.style.color = 'blue';
       return;
     }
 
-    // 🔐 Auto-login after signup (if no email confirmation required)
+    //Auto-login after signup (if no email confirmation required)
     const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
       email,
       password,

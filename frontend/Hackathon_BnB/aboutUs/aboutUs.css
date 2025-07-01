@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Verdana';
+    padding: 27px;
+    font-family: 'Verdana';
+    background: #000;
+    overflow-x: hidden;
+    position: relative;
+    color: white;
+}
+
+.brand-name {
+  background: linear-gradient(45deg, #f59e0b, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 40px;
+      }
+
+      h1, h2 {
+        font-style: normal;
+      }
+
+/* Base Styles */
+#dynamicCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 20% 50%, rgba(30, 64, 175, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+}
+
+/* Floating Particles */
+.floating-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Geometric Background */
+.geometric-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="50" cy="50" r="10" fill="rgba(59, 130, 246, 0.1)"/><circle cx="150" cy="150" r="10" fill="rgba(59, 130, 246, 0.1)"/><circle cx="100" cy="100" r="10" fill="rgba(59, 130, 246, 0.1)"/></svg>');
+  background-size: 150px 150px;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+/* Floating Elements */
+.floating-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* About Container */
+.about-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #0d277c;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
+  position: relative;
+  z-index: 10;
+}
+
+.about-section {
+  margin-bottom: 2rem;
+}
+
+h1,h2 {
+  font-family: 'Georgia';
+}
+
+h1 {
+  color: #c96916;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+h2 {
+  color: #c96916;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Mouse Trail Effect */
+.mouse-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.1s ease;
+}

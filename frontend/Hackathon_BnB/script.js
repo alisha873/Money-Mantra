@@ -10,10 +10,6 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
-function openTaxEstimator() {
-    window.location.href = './collegeS/collegeS.html';
-}
-
 function openFinanceEducation() {
     window.location.href = './collegeS/collegeS.html';
 }
@@ -32,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.removeItem('sb-auth-token');
             sessionStorage.removeItem('sb-auth-token');
             window.location.reload();
-    });
+        });
     } else {
         // User not logged in
         loginBtn.textContent = 'Login';
@@ -224,12 +220,13 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
 
     // Header transparency effect
-    const header = document.querySelector('header');
-    if (scrolled > 100) {
+    const header = document.querySelector('.header');
+    if (header){    //header doesn't exist on all pages so it causes errors
+      if (scrolled > 100) {
         header.style.background = 'rgba(0, 0, 0, 0.95)';
     } else {
         header.style.background = 'rgba(0, 0, 0, 0.8)';
-    }
+    }}
 });
 
 // Intersection Observer for scroll animations
@@ -302,10 +299,17 @@ if (statsSection) {
 }
 
 // Smooth scrolling for navigation links
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+
+        const href = this.getAttribute('href');
+
+        // Skip if href is just "#" (invalid selector)
+        if (href === '#') return;
+
+        const target = document.querySelector(href);
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
@@ -414,20 +418,3 @@ document.head.appendChild(style);
 
 // Initialize loading screen
 createLoadingScreen();
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const protectedButtons = [
-//     document.getElementById('ai-tax-summarizer-btn'),
-//     document.getElementById('learn-finance-btn')
-//   ].filter(Boolean);
-
-//   protectedButtons.forEach(btn => {
-//     btn.addEventListener('click', (e) => {
-//       if (!isUserLoggedIn()) {
-//         e.preventDefault();
-//         alert('Please log in to access this feature');
-//         window.location.href = './login/login.html';
-//       }
-//     });
-//   });
-// });

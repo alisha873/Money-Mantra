@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const { data: { session }, error } = await supabase.auth.getSession();
   if (error || !session) {
-    window.location.href = '/index1.html'; // or your login page
+    window.location.href = '../login/login.html';
     return;
   }
 
   try {
-    // ✅ Get session (this auto-refreshes the token if expired)
+    //Get session (auto-refreshes the token if expired)
     const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
     const { data: userData, error: userError } = await supabase.auth.getUser();
 
@@ -41,6 +41,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     container.innerHTML = `<div class="error">Error loading tax plan: ${error.message}</div>`;
     console.error('❌', error);
   }
+
+   // Cross button functionality
+    document.getElementById('close-chat').addEventListener('click', () => {
+    document.querySelector('.chat-section').classList.add('hidden');
+    document.querySelector('.tax-section').style.flex = '1 0 100%';
+  });
+
 });
 
 // Chatbox logic
@@ -53,16 +60,16 @@ document.getElementById('chatbox-form').addEventListener('submit', async functio
   appendMessage('user', message);
   input.value = '';
 
-  // Send message to backend (replace '/api/chat' with your endpoint)
+  // Send message to backend (replace '/api/chat' with respective endpoint)
   try {
     const response = await fetch('http://localhost:3000/api/tax/gpt', {
     method: 'POST',
     headers: {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${token}`,  // 🔐 Add this!
-      },
-  body: JSON.stringify({ email, question: message }) // 📤 match backend keys
-});
+    },
+    body: JSON.stringify({ email, question: message }) //match backend keys
+    });
     if (!response.ok) throw new Error('Network error');
     const data = await response.json();
     appendMessage('bot', data.answer || "Sorry, I didn't understand that.");
@@ -75,7 +82,14 @@ function appendMessage(sender, text) {
   const messages = document.getElementById('chatbox-messages');
   const msg = document.createElement('div');
   msg.className = sender === 'user' ? 'user-message' : 'bot-message';
-  msg.textContent = text;
+
+  if (sender === 'bot') {
+    msg.innerHTML = DOMPurify.sanitize(marked.parse(text));
+    msg.style.color = '#ff8c00';
+  } else {
+    msg.textContent = text;
+  }
+
   messages.appendChild(msg);
   messages.scrollTop = messages.scrollHeight;
 }

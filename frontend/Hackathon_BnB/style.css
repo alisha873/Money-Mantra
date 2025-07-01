@@ -667,6 +667,7 @@
 /* Timeline Steps Container */
 .timeline-steps {
     display: flex;
+    gap: 30px;
     justify-content: space-between;
     align-items: flex-start;
     position: relative;

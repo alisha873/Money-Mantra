@@ -4,24 +4,28 @@
 <meta charset="UTF-8">
 <title>Student Finance 101</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="collegeS.css">
+<link rel="stylesheet" href="../learnFinance.css">
 </head>
 <body>
   <canvas id="dynamicCanvas"></canvas>
-  <div class="main-container">
-    <header>
-      <h1>Student Finance 101</h1>
+      <header>
+      <h1 class="brand-name">Student Finance 101</h1>
       <p>Your essential guide to budgeting, borrowing, saving, and thriving on campus.</p>
     </header>
-    <div class="sections">
+  <div class="container">
 
-      <!-- Original Cards with Icons -->
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-wallet"></i></div>
-        <div class="section-title">Budgeting 101: Student Budget & Fun</div>
-        <ul class="section-list">
+    <div>
+
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-wallet"></i></span>
+        <span class="term-title">Budgeting 101: Student Budget & Fun</span>
+      </div>
+
+      <div class="glossary-card">
+        <ul class="term-desc">
           <li>Track your income vs expenses monthly (allowance, part-time job).</li>
           <li>Use the <b>50-30-20 rule</b>: 50% needs, 30% wants, 20% savings.</li>
           <li>Plan a “fun fund” (₹300–₹1000/month) guilt-free.</li>
@@ -29,10 +33,14 @@
         </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
-        <div class="section-title">Understanding Student Loans</div>
-        <ul class="section-list">
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-graduation-cap"></i></span>
+        <span class="term-title">Understanding Student Loans</span>
+      </div>
+
+      <div class="glossary-card">
+        <ul class="term-desc">
           <li>Interest starts during or after your course (check moratorium period).</li>
           <li>EMIs = Principal + Interest — higher the loan, longer the burden.</li>
           <li>Repay early if possible to reduce interest.</li>
@@ -40,10 +48,14 @@
         </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-shield-alt"></i></div>
-        <div class="section-title">Emergency Fund Basics</div>
-        <ul class="section-list">
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-shield-alt"></i></span>
+        <span class="term-title">Emergency Fund Basics</span>
+      </div>
+
+      <div class="glossary-card">
+        <ul class="term-desc">
           <li>Build a fund of ₹5,000–₹10,000 for health, phone repairs, travel issues.</li>
           <li>Keep it in a liquid account (not under your mattress).</li>
           <li>Use it only for unplanned urgent expenses.</li>
@@ -51,10 +63,14 @@
         </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-credit-card"></i></div>
-        <div class="section-title">How Credit Works</div>
-        <ul class="section-list">
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-credit-card"></i></span>
+        <span class="term-title">How Credit Works</span>
+      </div>
+      
+      <div class="glossary-card">
+        <ul class="term-desc">
           <li>A credit score reflects how responsibly you borrow and repay.</li>
           <li>Using a student credit card wisely builds history.</li>
           <li>Avoid minimum due trap—always pay full amount.</li>
@@ -62,10 +78,14 @@
         </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-user-tie"></i></div>
-        <div class="section-title">Part-Time Income Planning</div>
-        <ul class="section-list">
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-user-tie"></i></span>
+        <span class="term-title">Part-Time Income Planning</span>
+      </div>
+
+      <div class="glossary-card">
+        <ul class="term-desc">
           <li>Choose work that adds value to your resume and wallet.</li>
           <li>Save at least 30% of part-time earnings.</li>
           <li>Treat income as cash flow, not bonus money.</li>
@@ -73,10 +93,14 @@
         </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-lock"></i></div>
-        <div class="section-title">Digital Payment Safety</div>
-        <ul class="section-list">
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-lock"></i></span>
+        <span class="term-title">Digital Payment Safety</span>
+      </div>
+
+      <div class="glossary-card">
+        <ul class="term-desc">
           <li>Never share OTPs, UPI PIN, or scan random QR codes.</li>
           <li>Use apps with fraud alerts and transaction limits.</li>
           <li>Enable app locks (fingerprint/FaceID) for payment apps.</li>
@@ -84,10 +108,14 @@
         </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="section-title">Investing for Beginners</div>
-        <ul class="section-list">
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-chart-line"></i></span>
+        <span class="term-title">Investing for Beginners</span>
+      </div>
+
+      <div class="glossary-card">
+        <ul class="term-desc">
           <li>SIP: Start with ₹500/month in mutual funds.</li>
           <li>FD: Safe, but returns &lt; inflation.</li>
           <li>PPF: Long-term, 15-year lock-in, tax-free returns.</li>
@@ -95,10 +123,14 @@
         </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-briefcase"></i></div>
-        <div class="section-title">Campus-to-Career Transition</div>
-        <ul class="section-list">
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-briefcase"></i></span>
+        <span class="term-title">Campus-to-Career Transition</span>
+      </div>
+
+      <div class="glossary-card">
+        <ul class="term-desc">
           <li>Prepare for 2–3 months of unpaid job search post-college.</li>
           <li>Shift savings focus from “fun” to “future.”</li>
           <li>Learn about salary structure, tax-saving investments, and insurance.</li>
@@ -106,10 +138,14 @@
         </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-lightbulb"></i></div>
-        <div class="section-title">Hidden Costs of College Life</div>
-        <ul class="section-list">
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-lightbulb"></i></span>
+        <span class="term-title">Hidden Costs of College Life</span>
+      </div>
+
+      <div class="glossary-card">
+        <ul class="term-desc">
           <li>Review all auto-renew subscriptions (Spotify, OTT, etc).</li>
           <li>Avoid buying gadgets on impulse or EMI.</li>
           <li>Keep a buffer for project materials, travel, exam fees.</li>
@@ -117,10 +153,13 @@
         </ul>
       </div>
 
-      <!-- Split Cards for New Content -->
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-rupee-sign"></i></div>
-        <div class="section-title">Education Loan: Has vs Doesn’t Have</div>
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-rupee-sign"></i></span>
+        <span class="term-title">Education Loan: Has vs Doesn’t Have</span>
+      </div>
+
+      <div class="glossary-card">
         <div class="split-section">
           <div class="split-card">
             <div class="split-title">Has an Education Loan</div>
@@ -142,9 +181,13 @@
         </div>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-heartbeat"></i></div>
-        <div class="section-title">Health Insurance: Has vs Doesn’t Have</div>
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-heartbeat"></i></span>
+        <span class="term-title">Health Insurance: Has vs Doesn’t Have</span>
+      </div>
+
+      <div class="glossary-card">
         <div class="split-section">
           <div class="split-card">
             <div class="split-title">Has Health Insurance</div>
@@ -163,9 +206,13 @@
         </div>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-piggy-bank"></i></div>
-        <div class="section-title">PPF: Has vs Doesn’t Have</div>
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-piggy-bank"></i></span>
+        <span class="term-title">PPF: Has vs Doesn’t Have</span>
+      </div>
+
+      <div class="glossary-card">
         <div class="split-section">
           <div class="split-card">
             <div class="split-title">Has PPF</div>
@@ -184,9 +231,13 @@
         </div>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-lock"></i></div>
-        <div class="section-title">Fixed Deposit (FD): Has vs Doesn’t Have</div>
+      <!-- -->
+      <div class="icon-title-row">
+        <span class="glossary-icon"><i class="fas fa-lock"></i></span>
+        <span class="term-title">Fixed Deposit (FD): Has vs Doesn’t Have</span>
+      </div>
+
+      <div class="glossary-card">
         <div class="split-section">
           <div class="split-card">
             <div class="split-title">Has FD</div>
@@ -206,18 +257,11 @@
       </div>
 
     </div>
-
-    <div class="sections">
-        <p>Want to learn more? Check these out:
-          <br>
-          <a href="https://zerodha.com/varsity/">Zerodha Varsity</a>
-          <br>
-          <a href="https://www.nism.ac.in/nism-certifications/sebi-investor-certification-examination/">SIAT Certification by SEBI-NISM</a>
-        </p>
-    </div>
   </div>
+    
   <script type="module" src="../auth.js"></script>
-  <script src="collegeS.js"></script>
+  <script src="../dynamicBg.js"></script>
+
 </body>
 
 </html>

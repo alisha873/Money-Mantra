@@ -175,20 +175,70 @@ const generateTax =async(req,res)=>{
         const prompt = `
                 A ${age}-year-old ${role} in India earns ₹${income.toLocaleString()}/year and claims deductions for ${deductions.length > 0 ? deductions.join(', ') : 'none'}.
 
-                Your task:
-                1. Calculate total deductions with relevant Income Tax Act sections (e.g., 80C for PPF, 80E for education loan).
-                2. Under the **Old Regime**, apply deductions and show:
-                   - Total deductions
-                   - Taxable income
-                   - Final income tax (based on FY 2024–25 slabs)
-                3. Under the **New Regime**, assume no deductions and show:
-                   - Taxable income
-                   - Final tax (based on FY 2024–25 slabs)
-                4. Clearly state which regime is better (saves more tax).
-                5. Suggest 2–3 lines of beginner-friendly financial advice based on their profile.
-                
-                Use clear bullet points and Indian Rupee amounts. Keep tone helpful and easy for young earners to understand.
-                `.trim();
+                Your task is to act as an Indian income tax planner and perform a **step-by-step income tax comparison** for FY 2024–25.  
+                **Do not assume, invent, or infer** any tax rules or deductions outside of what is explicitly provided below.
+
+                ---
+
+                 Step-by-Step Instructions (Strictly follow this order and explain your reasoning at each step):
+
+                 1. Deductions (Old Regime Only)
+                - For each claimed deduction, mention the valid Income Tax Act section (e.g., 80C for PPF, 80D for health insurance).
+                - Only use deductions that are **explicitly recognized under Indian tax law**.
+                - If any claimed deduction is **not valid**, state that and ignore it in calculations.
+                - **Clearly list** all valid deductions and compute the **total deduction amount**.
+
+                 2. Old Regime Tax Calculation
+                - Compute **Taxable Income**: Gross Income – Total Deductions.
+                - Then calculate tax **slab by slab** using the following:
+
+                    - Up to ₹2.5 lakh: Nil  
+                    - ₹2.5 lakh – ₹5 lakh: 5%  
+                    - ₹5 lakh – ₹10 lakh: 20%  
+                    - Above ₹10 lakh: 30%
+
+                - Show exact tax amount for **each slab** separately.
+                - If Taxable Income is ≤ ₹5,00,000, apply **Section 87A rebate** to reduce final tax to ₹0.
+                - Show the **final tax under the Old Regime**.
+
+                 3.  New Regime Tax Calculation
+                - No deductions allowed.
+                - Taxable Income = Gross Income.
+                - Use these slabs:
+
+                    - Up to ₹3 lakh: Nil  
+                    - ₹3 lakh – ₹6 lakh: 5%  
+                    - ₹6 lakh – ₹9 lakh: 10%  
+                    - ₹9 lakh – ₹12 lakh: 15%  
+                    - ₹12 lakh – ₹15 lakh: 20%  
+                    - Above ₹15 lakh: 30%
+
+                - Again, calculate tax for each slab **separately and clearly**.
+                - Apply **Section 87A rebate** only if taxable income is ≤ ₹5,00,000.
+                - Show the **final tax under the New Regime**.
+
+                4. Regime Comparison
+                - Present total tax under both regimes.
+                - Clearly state which regime results in lower tax and by how much.
+                - Briefly explain **why** that regime is more beneficial.
+
+                5. Beginner-Friendly Financial Advice
+                 - Provide 2–3 short, helpful tips based on their profile. Examples:
+                 - Invest under Section 80C to save tax.
+                 - Consider NPS or ELSS for long-term growth and deductions.
+                 - Build an emergency fund or get health insurance.
+
+                Output Rules
+               - Use clear bullet points and structured formatting.
+               - Use Indian Rupee symbol and comma-separated values (e.g., ₹2,50,000).
+               - Ensure all numbers are accurate and calculations make logical sense.
+               - **Do not skip any step** or summarize prematurely.
+               - If any step doesn’t apply (e.g., invalid deductions), clearly say so and proceed.
+
+               ---
+
+               If taxable income is **very high (e.g., above ₹30 lakh)** and the computed tax is **suspiciously low**, re-check all steps.  
+               Double-check slab logic and deduction math. If unsure, add a disclaimer.`.trim();
         
         console.log('🧠 Prompt:', prompt);
 
@@ -224,11 +274,27 @@ const answerQuestions=async(req,res)=>{
             return res.status(404).json({ message: 'User not found.' });
         }
 
-        const prompt = `You are TaxGPT — a friendly and reliable financial assistant designed for Indian students, freelancers, and early earners.
-        Your job is to answer the following finance or tax-related question in a clear, beginner-friendly manner using accurate Indian context:"${question}"
-        Be concise, avoid jargon, and explain in everyday terms. 
-        If the answer depends on the user's role (student/fresher/freelancer), mention that. 
-        Use bullet points or short paragraphs if helpful. Avoid filler language and focus on useful, actionable insights.`.trim();
+        const prompt = `You are TaxGPT — a reliable and friendly AI financial assistant built specifically for Indian students, freelancers, and early earners.
+
+                        Your task is to answer the following tax or personal finance question using **only verified Indian tax rules and current financial year (FY 2024–25)** data:
+
+                        "${question}"
+
+                        Follow these guidelines:
+                        - **Be accurate**: If you're unsure or information is not explicitly available in the prompt, say so or suggest checking with a tax professional.
+                        - **Be concise and beginner-friendly**: Avoid jargon, and explain using simple words.
+                        - **Contextualize**: If the user's role (e.g., student/freelancer/fresher) affects the answer, address it.
+                        - **Structure**:
+                          - Start with a 1–2 line summary.
+                          - Use bullet points for key info or breakdowns.
+                          - End with 1–2 actionable tips if relevant.
+
+                        Restrictions:
+                        - Do **not make up tax rules, slabs, or deductions**. Only use actual Indian tax laws.
+                        - Do **not provide legal or investment advice** beyond general guidance.
+                        - Always assume the financial year is **2024–25**, unless otherwise stated.
+
+                        Keep your tone warm, helpful, and focused on delivering clear value.`.trim();
 
         const aiResponse = await callGroq(prompt);
 
@@ -243,7 +309,10 @@ const answerQuestions=async(req,res)=>{
 
 const getContentByRole = async (req, res) => {
   try {
-    const { email } = req.body;
+    console.log("🔥 /api/learn/content HIT");
+    console.log("Decoded user from token:", req.user);
+   
+    const email = req.user.email;
 
     if (!email) {
       return res.status(400).json({ message: 'Email is required.' });
@@ -264,7 +333,7 @@ const getContentByRole = async (req, res) => {
     const redirectMap = {
       student: './collegeS/collegeS.html',
       freelancer:  './freelancer/freelancer.html' ,
-      'corporate fresher': './corporate.html'
+      'corporate_fresher': './corporate/corporate.html'
     };
 
     const redirectTo = redirectMap[role];

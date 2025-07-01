@@ -1,6 +1,6 @@
 import { supabase } from '../supabaseClient.js';
 
-// ✅ 1. Get the currently logged-in user (await is required)
+// Getting the currently logged-in user
 document.addEventListener('DOMContentLoaded', async () => {
   const { data,error } = await supabase.auth.getUser();
   const user = data?.user;
@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   const name = user.user_metadata?.full_name || '';
 
   const { data: existingProfile, error: profileError } = await supabase
-  .from('UserProfile')
-  .select('*', { head: false })
-  .eq('userId', user.id)
-  .maybeSingle();
+    .from('UserProfile')
+    .select('*', { head: false })
+    .eq('userId', user.id)
+    .maybeSingle();
 
   console.log("Looking for profile with userId:", user.id);
   console.log("Profile fetch result:", existingProfile, "Error:", profileError);
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  // ✅ 2. Send data to `/user/init` only once per session
+  // Sending data to `/user/init` only once per session
   try {
     console.log("Calling /user/init with:", { email, name });
     await fetch('http://localhost:3000/api/user/init', {
@@ -43,19 +43,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Error initializing user:', err);
   }
 
-  const emailInput = document.getElementById('email');
+const emailInput = document.getElementById('email');
 const nameInput = document.getElementById('name');
 
 emailInput.value = email;
 nameInput.value = name;
 
-// Prevent user from editing these
+// Preventing user from editing these
 emailInput.readOnly = true;
 nameInput.readOnly = true;
 emailInput.style.backgroundColor = '#f3f4f6'; // optional: light gray
 nameInput.style.backgroundColor = '#f3f4f6';
 
-  // ✅ 3. Form submission logic (sending to `/user/profile`)
+  // Form submission logic (sending to `/user/profile`)
   const form = document.getElementById('userDetailsForm');
   const successMessage = document.getElementById('successMessage');
 

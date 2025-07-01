@@ -10,25 +10,32 @@
 <body>
   <canvas id="dynamicCanvas"></canvas>
 
-  <div class="container">
-    <h1>AI Tax Planner</h1>
-    <div id="gpt-content" class="gpt-content"></div>
-  </div>
+  <div class="main-container">
 
-    <!-- Chatbox Widget -->
-<div id="chatbox-container" class="chatbox-theme">
-  <div id="chatbox-header">AI Tax Assistant</div>
-  <div id="chatbox-messages"></div>
-  <form id="chatbox-form" autocomplete="off">
-    <input type="text" id="chatbox-input" placeholder="Type your question..." />
-    <button type="submit">Send</button>
-  </form>
-</div>
+    <div class="tax-section">
+      <div class="container">
+        <h1>AI Tax Planner</h1>
+        <div id="gpt-content" class="gpt-content"></div>
+      </div>
+    </div>
+
+
+    <div id="chatbox-container" class="chatbox-theme">
+      <div class="chat-header">
+        <!-- <button id="close-chat" class="close-btn">✕</button> -->
+      </div>
+      <div id="chatbox-messages"></div>
+      <form id="chatbox-form" autocomplete="off">
+        <input type="text" id="chatbox-input" placeholder="Type your question..." />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
   <script type="module" src="taxP.js"></script>
-  <script src="dynamicBg.js"></script>
-
+  <script src="../dynamicBg.js"></script>
 </body>
 </html>

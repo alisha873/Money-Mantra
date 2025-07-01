@@ -2,11 +2,11 @@
 const canvas = document.getElementById('dynamicCanvas');
 const ctx = canvas.getContext('2d');
 
-// Resize canvas to window
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
+
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
 
@@ -69,7 +69,7 @@ class Connection {
             ctx.lineTo(this.p2.x, this.p2.y);
             ctx.stroke();
             ctx.restore();
-        }       
+        }
     }
 }
 
@@ -99,65 +99,5 @@ function animate() {
 
     requestAnimationFrame(animate);
 }
+
 animate();
-
-// Mouse Trail Effect
-document.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-
-    // Create trail element
-    const trail = document.createElement('div');
-    trail.className = 'mouse-trail';
-    trail.style.left = mouseX + 'px';
-    trail.style.top = mouseY + 'px';
-    document.body.appendChild(trail);
-
-    // Remove trail after animation
-    setTimeout(() => {
-        trail.remove();
-    }, 600);
-
-    // Add particles near mouse
-    if (Math.random() < 0.1) {
-        particles.push(new Particle());
-        particles[particles.length - 1].x = mouseX;
-        particles[particles.length - 1].y = mouseY;
-    }
-});
-
-// Floating Particles
-function createFloatingParticle() {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.bottom = '-10px';
-    particle.style.width = Math.random() * 4 + 2 + 'px';
-    particle.style.height = particle.style.width;
-    particle.style.animationDuration = Math.random() * 10 + 10 + 's';
-    particle.style.animationDelay = Math.random() * 5 + 's';
-    
-    const colors = ['rgba(59, 130, 246, 0.6)', 'rgba(16, 185, 129, 0.6)', 'rgba(245, 158, 11, 0.6)'];
-    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-    
-    document.body.appendChild(particle);
-
-    setTimeout(() => {
-        particle.remove();
-    }, 15000);
-}
-
-// Create floating particles periodically
-setInterval(createFloatingParticle, 500);
-
-// Performance optimization
-let isVisible = true;
-document.addEventListener('visibilitychange', () => {
-    isVisible = !document.hidden;
-    
-    if (!isVisible) {
-        while (particles.length > 20) particles.pop();
-    } else {
-        while (particles.length < 80) particles.push(new Particle());
-    }
-});

@@ -4,123 +4,174 @@
   <meta charset="UTF-8">
   <title>Corporate Fresher Finance Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Verdana:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="corporate.css">
+  <link rel="stylesheet" href="../learnFinance.css">
 </head>
 <body>
+
   <canvas id="dynamicCanvas"></canvas>
-  <div class="main-container">
-    <header>
-      <h1>Corporate Fresher Finance Guide</h1>
-      <p>Establish financial independence, build assets, and prepare for future responsibilities.</p>
-    </header>
-    <div class="sections">
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-wallet"></i></div>
-        <div class="section-title">First Salary Blueprint</div>
-        <ul class="section-list">
-          <li>Splitting salary into save-spend-invest buckets.</li>
-        </ul>
+  <header>
+    <h1 class="brand-name">Corporate Fresher Finance Guide</h1>
+    <p>Establish financial independence, build assets, and prepare for future responsibilities.</p>
+  </header>
+  
+  <div class="container">
+  
+    <div>
+
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-wallet"></i></span>
+          <span class="term-title">First Salary Blueprint</span>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-credit-card"></i></div>
-        <div class="section-title">Building Credit Responsibly</div>
-        <ul class="section-list">
-          <li>Choosing your first credit card and managing limits.</li>
-        </ul>
+      <div class="glossary-card">
+          <ul class="term-desc">
+              <li>Splitting salary into save-spend-invest buckets.</li>
+          </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <div class="section-title">Understanding Taxes & Salary Structure</div>
-        <ul class="section-list">
-          <li>CTC vs in-hand, TDS, Form 16, 80C.</li>
-        </ul>
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-credit-card"></i></span>
+          <span class="term-title">Building Credit Responsibly</span>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-shield-alt"></i></div>
-        <div class="section-title">Health & Life Insurance 101</div>
-        <ul class="section-list">
-          <li>What your company covers vs what you need.</li>
-        </ul>
+      <div class="glossary-card">
+          <ul class="term-desc">
+              <li>Choosing your first credit card and managing limits.</li>
+          </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="section-title">Beginner Investing</div>
-        <ul class="section-list">
-          <li>SIPs, ELSS, NPS, and compounding explained.</li>
-        </ul>
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-file-invoice-dollar"></i></span>
+          <span class="term-title">Understanding Taxes & Salary Structure</span>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-piggy-bank"></i></div>
-        <div class="section-title">Emergency Fund Strategy</div>
-        <ul class="section-list">
-          <li>3-6 months of expenses—how and where to build it.</li>
-        </ul>
+      <div class="glossary-card">
+          <ul class="term-desc">
+              <li>CTC vs in-hand, TDS, Form 16, 80C.</li>
+          </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-laptop"></i></div>
-        <div class="section-title">Smart Debt Planning</div>
-        <ul class="section-list">
-          <li>Buying your first phone, bike, or laptop on EMI?</li>
-        </ul>
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-shield-alt"></i></span>
+          <span class="term-title">Health & Life Insurance 101</span>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-user-tie"></i></div>
-        <div class="section-title">Career Growth & Income Strategy</div>
-        <ul class="section-list">
-          <li>Upskilling ROI, side incomes, freelancing options.</li>
-        </ul>
+      <div class="glossary-card">
+          <ul class="term-desc">
+              <li>What your company covers vs what you need.</li>
+          </ul>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-chart-pie"></i></div>
-        <div class="section-title">Lifestyle Inflation Trap</div>
-        <ul class="section-list">
-          <li>How to avoid spending more just because you earn more.</li>
-        </ul>
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-chart-line"></i></span>
+          <span class="term-title">Beginner Investing</span>
       </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-rupee-sign"></i></div>
-        <div class="section-title">Education Loan: Has vs Doesn’t Have</div>
-        <div class="split-section">
-          <div class="split-card">
-            <div class="split-title">Has Education Loan</div>
-            <ul class="split-list">
-              <li>Debt Avalanche Method: Tackle highest interest first.</li>
-              <li>EMI Autopay Discipline: Never miss payments.</li>
-              <li>Tax Planning via 80E: Understand your deduction eligibility.</li>
-            </ul>
+      <div class="glossary-card">
+          <ul class="term-desc">
+              <li>SIPs, ELSS, NPS, and compounding explained.</li>
+          </ul>
+      </div>
+
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-piggy-bank"></i></span>
+          <span class="term-title">Emergency Fund Strategy</span>
+      </div>
+
+      <div class="glossary-card">
+          <ul class="term-desc">
+              <li>3-6 months of expenses—how and where to build it.</li>
+          </ul>
+      </div>
+
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-laptop"></i></span>
+          <span class="term-title">Smart Debt Planning</span>
+      </div>
+
+      <div class="glossary-card">
+          <ul class="term-desc">
+              <li>Buying your first phone, bike, or laptop on EMI?</li>
+          </ul>
+      </div>
+
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-user-tie"></i></span>
+          <span class="term-title">Career Growth & Income Strategy</span>
+      </div>
+
+      <div class="glossary-card">
+          <ul class="term-desc">
+              <li>Upskilling ROI, side incomes, freelancing options.</li>
+          </ul>
+      </div>
+
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-chart-pie"></i></span>
+          <span class="term-title">Lifestyle Inflation Trap</span>
+      </div>
+
+      <div class="glossary-card">
+          <ul class="term-desc">
+              <li>How to avoid spending more just because you earn more.</li>
+          </ul>
+      </div>
+
+      <!-- -->
+      <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-rupee-sign"></i></span>
+          <span class="term-title">Education Loan: Has vs Doesn’t Have</span>
+      </div>
+      
+      <div class="glossary-card">
+          <div class="split-section">
+              <div class="split-card">
+                  <div class="split-title">Has Education Loan</div>
+                  <ul class="split-list">
+                      <li>Debt Avalanche Method: Tackle highest interest first.</li>
+                      <li>EMI Autopay Discipline: Never miss payments.</li>
+                      <li>Tax Planning via 80E: Understand your deduction eligibility.</li>
+                  </ul>
+              </div>
+              <div class="split-card">
+                  <div class="split-title">Doesn’t Have a Loan</div>
+                  <ul class="split-list">
+                      <li>Early Investing Advantage: SIPs, PPF, and compounding examples.</li>
+                      <li>Emergency Fund First: Why it's more important than FD.</li>
+                  </ul>
+              </div>
           </div>
-          <div class="split-card">
-            <div class="split-title">Doesn’t Have a Loan</div>
-            <ul class="split-list">
-              <li>Early Investing Advantage: SIPs, PPF, and compounding examples.</li>
-              <li>Emergency Fund First: Why it's more important than FD.</li>
-            </ul>
-          </div>
-        </div>
+      </div>
 
-        <div class="sections">
-        <p>Want to learn more?</p>
-        <p>Check these out</p>
-        <a href="https://zerodha.com/varsity/">Zerodha Varsity</a>
-        <a href="https://www.nism.ac.in/nism-certifications/sebi-investor-certification-examination/">SIAT Certification by SEBI-NISM</a>
-    </div>
+
+      <div class="sections">
+        <p>Want to learn more? Check these out</p>
+        <br>
+        <ul class="section-list">
+          <p class="links">
+          Varsity by Zerodha - <a href="https://zerodha.com/varsity/">Zerodha Varsity</a>
+          <br>
+          SIAT Certification Exam -  <a href="https://www.nism.ac.in/nism-certifications/sebi-investor-certification-examination/">SIAT Certification by SEBI-NISM</a>
+          </p>
+        </ul>
       </div>
 
     </div>
+
   </div>
   <script type="module" src="../auth.js"></script>
-  <script src="corporate.js"></script>
+  <script src="../dynamicBg.js"></script>
 </body>
 </html>

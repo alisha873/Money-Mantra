@@ -2,138 +2,204 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Freelancer Finance Guide</title>
+  <title>Freelancer Financial Guidey</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+ 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="freelancer.css">
+  <link rel="stylesheet" href="../learnFinance.css">
 </head>
+
 <body>
-  <div class="main-container">
-    <header>
-      <h1>Freelancer Finance Guide</h1>
-      <p>Goal: Manage irregular income, ensure tax compliance, and build long-term financial stability.</p>
-    </header>
-    <div class="sections">
+  <canvas id="dynamicCanvas"></canvas>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-chart-pie"></i></div>
-        <div class="section-title">Budgeting with Irregular Income</div>
-        <ul class="section-list">
-          <li>Plan with average monthly income (based on 6–12 months of earnings).</li>
-          <li>Use two accounts: one for income inflow, one for monthly expenses (fixed personal draw).</li>
-          <li>Prioritize essentials: rent, bills, savings before discretionary spending.</li>
-          <li>Keep a 1–2 month buffer in your spending account for lean periods.</li>
-        </ul>
-      </div>
+  <header>
+  <h1 class="brand-name">Freelancer Finance Guide</h1>
+  <p>Manage irregular income, ensure tax compliance, and build long-term financial stability.</p>
+  </header>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <div class="section-title">Tax Basics for Freelancers</div>
-        <ul class="section-list">
-          <li><strong>🇮🇳 India:</strong>
-            <ul>
-              <li>Section 44ADA: Presumptive taxation for professionals—50% of income considered profit, taxed directly.</li>
-              <li>Pay advance tax quarterly to avoid interest penalties.</li>
-              <li>Register under GST if annual turnover exceeds ₹20 lakh (for services).</li>
-              <li>Issue proper invoices and collect client TDS certificates (Form 16A).</li>
+    <div class="container">
+
+      <div>
+        <!-- -->
+        <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-chart-pie"></i></span>
+          <span class="term-title">Budgeting with Irregular Income</span>
+        </div>
+
+        <div class="glossary-card">
+          <ul class="term-desc">
+            <li>Plan with average monthly income (based on 6-12 months of earnings).</li>
+            <li>Use two accounts: one for income inflow, one for monthly expenses (fixed personal draw).</li>
+            <li>Prioritize essentials: rent, bills, savings before discretionary spending.</li>
+            <li>Keep a 1-2 month buffer in your spending account for lean periods.</li>
+          </ul>
+        </div>
+
+        <!-- -->
+        <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-file-invoice-dollar"></i></span>
+          <span class="term-title">Tax Basics for Freelancers</span>
+        </div>
+
+        <div class="glossary-card">
+          <div class="term-desc">
+            <ul class="section-list">
+              <strong>In India:</strong>
+              <li>
+                <ul>
+                  <li>Section 44ADA: Presumptive taxation for professionals—50% of income considered profit, taxed directly.</li>
+                  <li>Pay advance tax quarterly to avoid interest penalties.</li>
+                  <li>Register under GST if annual turnover exceeds ₹20 lakh (for services).</li>
+                  <li>Issue proper invoices and collect client TDS certificates (Form 16A).</li>
+                </ul>
+              </li>
+              <strong>In US:</strong>
+              <li>
+                <ul>
+                  <li>Report freelance income via 1099 forms.</li>
+                  <li>Pay estimated taxes quarterly to the IRS.</li>
+                  <li>Claim deductions for home office, internet, gear, subscriptions, etc.</li>
+                  <li>Use tools like TurboTax or QuickBooks Self-Employed for tracking.</li>
+                </ul>
+              </li>
             </ul>
-          </li>
-          <li><strong>🇺🇸 US:</strong>
-            <ul>
-              <li>Report freelance income via 1099 forms.</li>
-              <li>Pay estimated taxes quarterly to the IRS.</li>
-              <li>Claim deductions for home office, internet, gear, subscriptions, etc.</li>
-              <li>Use tools like TurboTax or QuickBooks Self-Employed for tracking.</li>
+          </div>
+        </div>
+
+        <!-- PPF -->
+        <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-tag"></i></span>
+          <span class="term-title">Setting Freelance Rates</span>
+        </div>
+
+        <div class="glossary-card">
+          <div class="term-desc">
+            <ul class="section-list">
+              <li>Formula: (Your desired monthly income + business expenses + taxes) ÷ billable hours.</li>
+              <li>Consider your experience, skill level, and market rate.</li>
+              <li>Avoid undercharging—review your pricing quarterly.</li>
+              <li>Use value-based pricing where possible (for expertise-based projects).</li>
             </ul>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-tag"></i></div>
-        <div class="section-title">Setting Freelance Rates</div>
-        <ul class="section-list">
-          <li>Formula: (Your desired monthly income + business expenses + taxes) ÷ billable hours.</li>
-          <li>Consider your experience, skill level, and market rate.</li>
-          <li>Avoid undercharging—review your pricing quarterly.</li>
-          <li>Use value-based pricing where possible (for expertise-based projects).</li>
-        </ul>
-      </div>
+        <!-- NPS -->
+        <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-piggy-bank"></i></span>
+          <span class="term-title">Emergency Fund & Buffer Accounts</span>
+        </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-piggy-bank"></i></div>
-        <div class="section-title">Emergency Fund & Buffer Accounts</div>
-        <ul class="section-list">
-          <li>Freelancers need 6–9 months of expenses saved due to unpredictable income.</li>
-          <li>Use sub-accounts: “Emergency Fund”, “Tax Holding”, “Future Purchases”.</li>
-          <li>Keep funds in high-interest savings or liquid mutual funds.</li>
-        </ul>
-      </div>
+        <div class="glossary-card">
+          <div class="term-desc">
+            <ul class="section-list">
+              <li>Freelancers need 6–9 months of expenses saved due to unpredictable income.</li>
+              <li>Use sub-accounts: “Emergency Fund”, “Tax Holding”, “Future Purchases”.</li>
+              <li>Keep funds in high-interest savings or liquid mutual funds.</li>
+            </ul>
+          </div>
+        </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="section-title">Retirement Planning without EPF</div>
-        <ul class="section-list">
-          <li>NPS: Low-cost, long-term pension plan with tax benefits.</li>
-          <li>PPF: Safe, 15-year lock-in investment with tax-free returns.</li>
-          <li>Mutual Fund SIPs: Higher returns for long-term growth; start with Rs. 500/month.</li>
-          <li>Automate monthly contributions; increase with income growth.</li>
-        </ul>
-      </div>
+        <!-- Life Insurance -->
+        <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-chart-line"></i></span>
+          <span class="term-title">Retirement Planning without EPF</span>
+        </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-shield-alt"></i></div>
-        <div class="section-title">Insurance Must-Haves</div>
-        <ul class="section-list">
-          <li>Health Insurance: Individual or family plan with Rs. 5–10 lakh coverage.</li>
-          <li>Term Life Insurance: Only if you have dependents or loans.</li>
-          <li>Disability Cover: Replaces income if illness/injury halts your work.</li>
-          <li>Review coverage annually.</li>
-        </ul>
-      </div>
+        <div class="glossary-card">
+          <div class="term-desc">
+            <ul class="section-list">
+              <li>NPS: Low-cost, long-term pension plan with tax benefits.</li>
+              <li>PPF: Safe, 15-year lock-in investment with tax-free returns.</li>
+              <li>Mutual Fund SIPs: Higher returns for long-term growth; start with Rs. 500/month.</li>
+              <li>Automate monthly contributions; increase with income growth.</li>
+            </ul>
+          </div>
+        </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-briefcase"></i></div>
-        <div class="section-title">Creating a Business Mindset</div>
-        <ul class="section-list">
-          <li>Track monthly income, expenses, and profits using Excel, Zoho Books, or QuickBooks.</li>
-          <li>Open a separate business account for clarity.</li>
-          <li>Set aside funds for upskilling, software tools, marketing.</li>
-          <li>Treat freelance work as a sustainable business, not one-time gigs.</li>
-        </ul>
-      </div>
+        <!-- FD -->
+        <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-shield-alt"></i></span>
+          <span class="term-title">Insurance Must-Haves</span>
+        </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-robot"></i></div>
-        <div class="section-title">Automating Finances</div>
-        <ul class="section-list">
-          <li>Set auto-transfers for: Savings/investments (SIP, PPF, RD), Tax holding (30–35% of gross), Emergency fund.</li>
-          <li>Use banking rules (like IFTTT or standing instructions) to reduce manual effort.</li>
-          <li>Automation prevents emotional overspending and enforces discipline.</li>
-        </ul>
-      </div>
+        <div class="glossary-card">
+          <div class="term-desc">
+            <ul class="section-list">
+              <li>Health Insurance: Individual or family plan with Rs. 5–10 lakh coverage.</li>
+              <li>Term Life Insurance: Only if you have dependents or loans.</li>
+              <li>Disability Cover: Replaces income if illness/injury halts your work.</li>
+              <li>Review coverage annually.</li>
+            </ul>
+          </div>
+        </div>
 
-      <div class="section-card">
-        <div class="section-icon"><i class="fas fa-file-signature"></i></div>
-        <div class="section-title">Client Payment Security</div>
-        <ul class="section-list">
-          <li>Always sign contracts before starting work—include payment terms, scope, and delivery timelines.</li>
-          <li>Collect 50% advance for new clients or larger projects.</li>
-          <li>Use platforms like Razorpay, PayPal, Wise, or Stripe for secure global transactions.</li>
-          <li>Maintain a list of invoices and follow-up cycles for overdue payments.</li>
-        </ul>
-      </div>
+        <!-- FD -->
+        <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-briefcase"></i></span>
+          <span class="term-title">Creating a Business Mindset</span>
+        </div>
 
+        <div class="glossary-card">
+          <div class="term-desc">
+            <ul class="section-list">
+              <li>Track monthly income, expenses, and profits using Excel, Zoho Books, or QuickBooks.</li>
+              <li>Open a separate business account for clarity.</li>
+              <li>Set aside funds for upskilling, software tools, marketing.</li>
+              <li>Treat freelance work as a sustainable business, not one-time gigs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FD -->
+        <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-robot"></i></span>
+          <span class="term-title">Automating Finances</span>
+        </div>
+
+        <div class="glossary-card">
+          <div class="term-desc">
+            <ul class="section-list">
+              <li>Set auto-transfers for: Savings/investments (SIP, PPF, RD), Tax holding (30–35% of gross), Emergency fund.</li>
+              <li>Use banking rules (like IFTTT or standing instructions) to reduce manual effort.</li>
+              <li>Automation prevents emotional overspending and enforces discipline.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- FD -->
+        <div class="icon-title-row">
+          <span class="glossary-icon"><i class="fas fa-file-signature"></i></span>
+          <span class="term-title">Client Payment Security</span>
+        </div>
+
+        <div class="glossary-card">
+          <div class="term-desc">
+            <ul class="section-list">
+              <li>Always sign contracts before starting work—include payment terms, scope, and delivery timelines.</li>
+              <li>Collect 50% advance for new clients or larger projects.</li>
+              <li>Use platforms like Razorpay, PayPal, Wise, or Stripe for secure global transactions.</li>
+              <li>Maintain a list of invoices and follow-up cycles for overdue payments.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sections">
+          <p>Want to learn more? Check these out</p>
+          <br>
+          <ul class="section-list">
+            <p class="links">
+            Varsity by Zerodha - <a href="https://zerodha.com/varsity/">Zerodha Varsity</a>
+            <br>
+            SIAT Certification Exam -  <a href="https://www.nism.ac.in/nism-certifications/sebi-investor-certification-examination/">SIAT Certification by SEBI-NISM</a>
+            </p>
+          </ul>
+        </div>
+
+      </div>
     </div>
+    
+    <script type="module" src="../auth.js"></script>
+    <script src="../dynamicBg.js"></script>
 
-    <div class="sections">
-        <p>Want to learn more?</p>
-        <p>Check these out</p>
-        <a href="https://zerodha.com/varsity/">Zerodha Varsity</a>
-        <a href="https://www.nism.ac.in/nism-certifications/sebi-investor-certification-examination/">SIAT Certification by SEBI-NISM</a>
-    </div>
-  </div>
-  <script type="module" src="../auth.js"></script>
-</body>
+  </body>
 </html>

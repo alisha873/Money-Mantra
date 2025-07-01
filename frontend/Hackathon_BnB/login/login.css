@@ -11,18 +11,13 @@ body {
     position: relative;
     color: white;
 }
- .brand-name {
-            background: linear-gradient(45deg, #f59e0b, #10b981);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 40px;
-        }
- /* h2 {
-    text-align: center;
+.brand-name {
+    background: linear-gradient(45deg, #f59e0b, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: 40px;
-    font-weight: 600;
-  } */
+}
 
 h2, h3 {
     font-family: 'Georgia';
@@ -55,10 +50,10 @@ h2, h3 {
 }
 
  .brand-name {
-            background: linear-gradient(45deg, #f59e0b, #10b981);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+    background: linear-gradient(45deg, #f59e0b, #10b981);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
         }
 
 .login-box {
@@ -153,6 +148,7 @@ button {
     outline: none;
     border-radius: 40px;
     cursor: pointer;
+    font-family: 'Georgia';
     font-size: 1em;
     color: black;
     font-weight: 500;
@@ -174,4 +170,8 @@ button {
 
 .register-link :hover {
     text-decoration: underline;
+}
+
+a{
+    font-family: 'Georgia';
 }
