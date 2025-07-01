@@ -6,7 +6,7 @@ const cors = require('cors');
 const app=express();
 
 app.use(cors({
-    origin: ['http://127.0.0.1:5500', 'http://127.0.0.1:8080', 'http://localhost:5500', 'http://localhost:8080','https://moneymantraa.vercel.app'],
+    origin: ['http://127.0.0.1:5500', 'http://127.0.0.1:8080', 'http://localhost:5500', 'http://localhost:8080','https://moneymatra.vercel.app'],
     credentials: true
 }));
 //middlewares - to parse data and handle form requests
