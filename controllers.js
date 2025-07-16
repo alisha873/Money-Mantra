@@ -2,27 +2,21 @@ const {PrismaClient} = require('@prisma/client');
 const prisma= new PrismaClient();
 const axios = require('axios')
 
-const callGroq = async (prompt) => {
-    try{
-  const response = await axios.post(
-    'https://api.groq.com/openai/v1/chat/completions',
-    {
-      model: 'llama3-70b-8192',
-      messages: [{ role: 'user', content: prompt }],
-      temperature: 0.7, //this will control creativity 
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-    }
-  );
-  return response.data.choices[0].message.content;
-}catch(error){
-    console.error('❌ Groq API Error:', error.response?.data || error);
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+const callGemini = async (prompt) => {
+  try {
+    const response = await axios.post(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`,
+      {
+        contents: [{ parts: [{ text: prompt }] }]
+      }
+    );
+    return response.data?.candidates?.[0]?.content?.parts?.[0]?.text || "No response.";
+  } catch (error) {
+    console.error("❌ Gemini API Error:", error.response?.data || error.message);
     throw error;
-}
+  }
 };
 
 const CreateUser = async(req,res)=>{
@@ -242,7 +236,7 @@ const generateTax =async(req,res)=>{
         
         console.log('🧠 Prompt:', prompt);
 
-        try{const aiResponse = await callGroq(prompt);
+        try{const aiResponse = await callGemini(prompt);;
 
         res.status(200).json({
             originalIncome: income,
@@ -296,7 +290,7 @@ const answerQuestions=async(req,res)=>{
 
                         Keep your tone warm, helpful, and focused on delivering clear value.`.trim();
 
-        const aiResponse = await callGroq(prompt);
+        const aiResponse = await callGemini(prompt);
 
         res.status(200).json({ answer: aiResponse });
     }
