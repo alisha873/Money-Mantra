@@ -10,28 +10,32 @@
 <body>
   <canvas id="dynamicCanvas"></canvas>
 
-  <div class="main-container">
 
+  <div class="main-container">
+    <!-- TAX SECTION -->
     <div class="tax-section">
+      <h1 class="brand-name">AI Tax Planner</h1>
       <div class="container">
-        <h1>AI Tax Planner</h1>
         <div id="gpt-content" class="gpt-content"></div>
       </div>
-    </div>
+    </div>l
 
 
-    <div id="chatbox-container" class="chatbox-theme">
-      <div class="chat-header">
-        <!-- <button id="close-chat" class="close-btn">✕</button> -->
+    <!-- CHAT-SECTION -->
+    <div class="chat-section">
+      <h1 class="brand-name">Fin Bot</h1>
+      <div id="chatbox-container" class="chatbox-theme">
+        <div id="chatbox-messages"></div>
+        <form id="chatbox-form" autocomplete="off">
+          <input type="text" id="chatbox-input" placeholder="Type your question..." />
+          <button type="submit">Send</button>
+        </form>
+        </div>
       </div>
-      <div id="chatbox-messages"></div>
-      <form id="chatbox-form" autocomplete="off">
-        <input type="text" id="chatbox-input" placeholder="Type your question..." />
-        <button type="submit">Send</button>
-      </form>
     </div>
-    
+   
   </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
